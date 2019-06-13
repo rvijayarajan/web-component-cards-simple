@@ -1,28 +1,19 @@
 <div class="card">
-	<div class="card-header">
-		Featured
+	<div class="card-header" ng-if="$ctrl.config.headerText">
+		{{$ctrl.config.headerText}}
 	</div>
   	<div class="card-body">
-	  	<!-- <img src="..." class="card-img-top" alt="...">
-	  	<h5 class="card-title">Card title</h5>
-	    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-	    <p class="card-text">This is some text within a card body.</p>
-	    <a href="#" class="card-link">Card link</a>
-	    <a href="#" class="card-link">Another link</a>
-	    <img src="..." class="card-img-top" alt="..."> -->
-	    <ul class="list-group list-group-flush">
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		</ul>
+	  	<img src="{{$ctrl.config.topImage}}" class="card-img-top" alt="Top Image Unavailable. Please check source url." ng-if="$ctrl.config.topImage">
+	  	<h5 class="card-title" ng-if="$ctrl.config.title">{{$ctrl.config.title}}</h5>
+	    <h6 class="card-subtitle mb-2 text-muted" ng-if="$ctrl.config.subTitle">{{$ctrl.config.subTitle}}</h6>
+	    <p class="card-text" ng-if="$ctrl.config.bodyText">{{$ctrl.config.bodyText}}</p>
+	    <a href="{{link.href}}" class="card-link" ng-repeat="link in $ctrl.config.cardLinks track by $index" ng-if="$ctrl.config.cardLinks.length>0">{{link.text}}</a>
+	    <img src="{{$ctrl.config.bottomImage}}" class="card-img-top" alt="Bottom Image Unavailable. Please check source url." ng-if="$ctrl.config.bottomImage">
+	    <ul class="list-group list-group-flush" ng-if="$ctrl.config.cardDetails.length>0">
+	    	<li class="list-group-item" ng-repeat="detail in $ctrl.config.cardDetails track by $index">{{detail.text}}</li>
+	    </ul>
   	</div>
-  	<div class="card-footer text-muted">
-    	2 days ago
+  	<div class="card-footer text-muted" ng-if="$ctrl.config.footerText">
+    	{{$ctrl.config.footerText}}
   	</div>
 </div>

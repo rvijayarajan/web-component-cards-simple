@@ -5,6 +5,7 @@
 	app.component("wcCardsSimple", {
 		templateUrl: "cards-simple.html",
 		bindings: {
+			config: "<cardsConfig"
 		},
 		controller: "CardsSimpleController"
 	});
