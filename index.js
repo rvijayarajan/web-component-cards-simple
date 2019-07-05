@@ -1,6 +1,6 @@
 (function () {
 
- 	var app = angular.module("wcCardsSimple",[]);
+ 	var app = angular.module("wcCardsSimple",["wcCardsSimpleTemplates"]);
 
 	app.component("wcCardsSimple", {
 		templateUrl: "cards-simple.html",
